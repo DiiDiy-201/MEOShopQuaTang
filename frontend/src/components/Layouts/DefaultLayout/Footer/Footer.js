@@ -28,7 +28,7 @@ const Footer = () => {
                           <li>
                             <i className="lar la-envelope"></i>
                             <span>
-                              <Link to="/">meoshop@gmail.com </Link>
+                              <Link to="/">meoshoponline@gmail.com </Link>
                               <br />
                               <Link to="/">duy22901@gmail.com </Link>
                             </span>

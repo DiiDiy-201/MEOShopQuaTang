@@ -9,12 +9,12 @@ const RelatedProducts = ({ category }) => {
     <>
       {category ? (
         <>
-          <section className="related-product pb-100">
+          <section className="related-product pb-200">
             <div className="container">
               <div className="row">
                 <div className="col-12">
                   <h3 className="eg-title1 eg-title2 mb-50">
-                    Sản phẩm tương tự
+                    Sản phẩm đề xuất
                   </h3>
                 </div>
               </div>

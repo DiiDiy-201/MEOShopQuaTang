@@ -258,7 +258,9 @@ const HeaderHome = () => {
                 <div className="header-1-contact d-flex align-items-center">
                   <div className="contact-num">
                     <span>Hotline </span>
-                    <p>+84 234 777 534 </p>
+                    <p>+84 234 777 534</p>
+                    <span>Email </span>
+                    <p><a href="mailto:youremail@gmail.com">meoshoponline@gmail.com</a></p>
                   </div>
                 </div>
               </div>

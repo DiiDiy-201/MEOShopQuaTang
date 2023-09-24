@@ -51,7 +51,7 @@ const Product = ({ product, col }) => {
               </ul>
               <div className="product-add-btn">
                 <Link to={`/product/${product._id}`}>
-                  Xem chi tiết <i className="fa fa-plus"></i>
+                  Xem ngay <i className="fa fa-gift"></i>
                 </Link>
               </div>
             </div>

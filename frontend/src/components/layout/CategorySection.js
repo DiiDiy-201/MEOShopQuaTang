@@ -15,7 +15,7 @@ const CategorySection = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="section-head-style-one">
-              <h2>Bạn cần tìm gì ?</h2>
+              <h2>Bạn muốn tặng quà cho ai ?</h2>
               <p>Đây là danh mục của MEOShop </p>
             </div>
           </div>

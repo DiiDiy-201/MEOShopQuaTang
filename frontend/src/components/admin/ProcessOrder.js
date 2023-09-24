@@ -195,7 +195,7 @@ const ProcessOrder = () => {
                     <b>{orderStatus}</b>
                   </p>
 
-                  <h4 className="my-4">Số sản phẩm:</h4>
+                  <h4 className="my-4">Danh sách sản phẩm:</h4>
 
                   <hr />
                   {/* moi */}
