@@ -128,9 +128,18 @@ const Home = () => {
                   <div className="col-6 col-md-3 mt-5 mb-5">
                     <div
                       className="eg-product-carde-alpha-filter-sanpham shadow-lg "
-                      style={{ borderRadius: "20px" }}
+                      style={{ borderRadius: "16px" }}
                     >
                       <div className="px-5">
+                        <h4 className="eg-title1 hr_home_search mb-3" style={{ fontSize: '18px' }}>
+                          BỘ LỌC TÌM KIẾM
+                          <br />
+                          <br></br>
+                          Khoảng giá
+                          <br></br>
+
+                        </h4>
+                        <br />     
                         <Range
                           marks={{
                             1: `1k`,
@@ -151,8 +160,8 @@ const Home = () => {
                         {/* <hr className="my-5" /> */}
 
                         <div className="mt-5">
-                          <h4 className="eg-title1 hr_home_search mb-3">
-                            Danh mục
+                          <h4 className="eg-title1 hr_home_search mb-3" style={{ fontSize: '18px' }} >
+                            Theo danh mục
                           </h4>
 
                           <ul className="pl-0">
@@ -172,10 +181,9 @@ const Home = () => {
                         </div>
 
                         {/* <hr className=" my-3" /> */}
-
                         <div className="mt-5">
-                          <h4 className="eg-title1 hr_home_search mb-3">
-                            Đánh giá
+                          <h4 className="eg-title1 hr_home_search mb-3" style={{ fontSize: '18px' }}>
+                            Theo đánh giá
                           </h4>
 
                           <ul className="list-group pl-0">

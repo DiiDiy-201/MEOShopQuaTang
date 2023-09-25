@@ -140,10 +140,10 @@ const OrderDetails = () => {
                 vnđ
               </p>
 
-              <p>
+              {/* <p>
                 <b>Mã đơn hàng: </b>
                 {order._id}
-              </p>
+              </p> */}
 
               <p>
                 <b>Ngày nhận hàng: </b>
@@ -155,7 +155,7 @@ const OrderDetails = () => {
 
               <hr />
 
-              <h4 className="my-4">Số sản phẩm:</h4>
+              <h4 className="my-4">Danh sách sản phẩm:</h4>
               <hr />
               {/* moi */}
               <div className="row item-in-cart">
@@ -218,7 +218,7 @@ const OrderDetails = () => {
                       </div>
 
                       <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                        <p>{item.quantity} cái(s)</p>
+                        <p>x {item.quantity}</p>
                       </div>
 
                       {order.orderStatus &&

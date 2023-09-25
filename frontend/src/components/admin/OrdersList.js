@@ -64,7 +64,7 @@ const OrdersList = () => {
           sort: "asc",
         },
         {
-          label: "Số sản phẩm",
+          label: "Danh sách sản phẩm",
           field: "numofItems",
           sort: "asc",
         },

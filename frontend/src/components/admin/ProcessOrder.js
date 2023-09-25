@@ -141,9 +141,9 @@ const ProcessOrder = () => {
                     vnđ
                   </p>
 
-                  <p>
+                  {/* <p>
                     <b>Đơn hàng id: </b> {order._id}
-                  </p>
+                  </p> */}
 
                   <p>
                     <b>Ngày giao hàng: </b>
@@ -171,10 +171,10 @@ const ProcessOrder = () => {
                   ) : (
                     <>
                       {" "}
-                      <h4 className="my-4">User id</h4>
+                      {/* <h4 className="my-4">User id</h4>
                       <p className="greenColor">
                         <b>{user && user._id}</b>
-                      </p>
+                      </p> */}
                     </>
                   )}
 
@@ -254,7 +254,7 @@ const ProcessOrder = () => {
                           </div>
 
                           <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                            <p>{item.quantity} cái(s)</p>
+                            <p>x {item.quantity}</p>
                           </div>
                         </div>
                       ))}
