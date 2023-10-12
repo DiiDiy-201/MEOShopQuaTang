@@ -153,7 +153,51 @@ const ProcessOrder = () => {
                   </p>
 
                   <hr />
+<<<<<<< HEAD
                 
+=======
+
+                  <h4 className="my-4">Thanh toán</h4>
+                  <p className={isPaid ? "greenColor" : "redColor"}>
+                    <b>{isPaid ? "Đã thanh toán" : "Chưa thanh toán"}</b>
+                  </p>
+
+                  {paymentInfo && paymentInfo.paymentMethod === "byCard" ? (
+                    <>
+                      {" "}
+                      <h4 className="my-4">Stripe id</h4>
+                      <p className="greenColor">
+                        <b>{paymentInfo && paymentInfo.id}</b>
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      {/* <h4 className="my-4">User id</h4>
+                      <p className="greenColor">
+                        <b>{user && user._id}</b>
+                      </p> */}
+                    </>
+                  )}
+
+                  {/* <h4 className="my-4">ID thanh toán</h4>
+                  <p>
+                    <b>{paymentInfo && paymentInfo.id}</b>
+                  </p> */}
+
+                  <h4 className="my-4">Trạng thái đơn hàng:</h4>
+                  <p
+                    className={
+                      order.orderStatus &&
+                      String(order.orderStatus).includes("Đã giao hàng")
+                        ? "greenColor"
+                        : "redColor"
+                    }
+                  >
+                    <b>{orderStatus}</b>
+                  </p>
+
+>>>>>>> 2ce25621c2d3a6022386b5cc895665ecbdad72b5
                   <h4 className="my-4">Danh sách sản phẩm:</h4>
 
                   <hr />

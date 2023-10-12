@@ -156,7 +156,7 @@ const OrderDetails = () => {
 
               <hr />
 
-              <h4 className="my-4">Số sản phẩm:</h4>
+              <h4 className="my-4">Danh sách sản phẩm:</h4>
               <hr />
               {/* moi */}
               <div className="row item-in-cart">

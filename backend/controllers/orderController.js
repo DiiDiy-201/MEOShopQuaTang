@@ -209,7 +209,7 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     try {
       await sendEmail({
         email: user.email,
-        subject: "shopquaonline.com - Đơn hàng được giao thành công",
+        subject: "MEOShoponline.com - Đơn hàng được giao thành công",
         message: message,
       });
       console.log("Email sent");
@@ -224,7 +224,7 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     try {
       await sendEmail({
         email: req.user.email,
-        subject: "shopquaonline.com - Hủy đơn hàng thành công",
+        subject: "MEOShoponline.com - Hủy đơn hàng thành công",
         message: messagecancel,
       });
       console.log("Email sent");

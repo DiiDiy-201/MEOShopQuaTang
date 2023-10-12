@@ -28,6 +28,11 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     });
   }
 
+  // Đổi giá từ USD sang VND
+  const priceInUSD = parseFloat(req.body.price);
+  const priceInVND = (priceInUSD * usdToVndExchangeRate).toFixed(2);
+
+  req.body.price = priceInVND; // Cập nhật giá trong VND
   req.body.images = imagesLinks;
   req.body.user = req.user.id;
 
@@ -47,7 +52,9 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
   const apiFeatures = new APIFeatures(Product.find(), req.query)
     .search()
-    .filter();
+    .filter()
+    .category() 
+    .ratings();
 
   let products = await apiFeatures.query;
   let filteredProductsCount = products.length;
@@ -122,7 +129,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   }
 
   if (images !== undefined) {
-    // Deleting images associated with the product
+    // Xóa hình ảnh liên quan đến sản phẩm
     for (let i = 0; i < product.images.length; i++) {
       const result = await cloudinary.v2.uploader.destroy(
         product.images[i].public_id
@@ -144,6 +151,12 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
     req.body.images = imagesLinks;
   }
+
+  // Đổi giá từ USD sang VND
+  const priceInUSD = parseFloat(req.body.price);
+  const priceInVND = (priceInUSD * usdToVndExchangeRate).toFixed(2);
+
+  req.body.price = priceInVND; // Cập nhật giá trong VND
 
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
