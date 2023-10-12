@@ -23,7 +23,7 @@ const ProcessOrder = () => {
   const dispatch = useDispatch();
 
   //shipper
-  const { shipper } = useSelector((state) => state.shipperAuth);
+  // const { shipper } = useSelector((state) => state.shipperAuth);
 
   const { loading, order = {} } = useSelector((state) => state.orderDetails);
   const {
@@ -54,8 +54,7 @@ const ProcessOrder = () => {
 
   const shippingDetails =
     shippingInfo &&
-    `${shippingInfo.address}, ${shippingInfo.city.split("-")[0]}, ${
-      shippingInfo.district.split("-")[0]
+    `${shippingInfo.address}, ${shippingInfo.city.split("-")[0]}, ${shippingInfo.district.split("-")[0]
     }, ${shippingInfo.ward.split("-")[0]}`;
 
   let isPaid = paymentInfo && paymentInfo.status === "succeeded" ? true : false;
@@ -63,8 +62,8 @@ const ProcessOrder = () => {
   // moi;
   if (!isPaid) {
     paymentInfo &&
-    paymentInfo.paymentMethod === "byHand" &&
-    order.orderStatus === "Đã giao hàng"
+      paymentInfo.paymentMethod === "byHand" &&
+      order.orderStatus === "Đã giao hàng"
       ? (isPaid = true)
       : (isPaid = false);
   }
@@ -103,17 +102,17 @@ const ProcessOrder = () => {
 
                   <div>
                     {order.orderStatus &&
-                    (String(order.orderStatus).includes("Đang giao") ||
-                      String(order.orderStatus).includes("Đã giao hàng")) ? (
+                      (String(order.orderStatus).includes("Đang giao") ||
+                        String(order.orderStatus).includes("Đã giao hàng")) ? (
                       <Fragment>
-                        <h4 className="mb-4">Thông tin shipper</h4>
+                        {/* <h4 className="mb-4">Thông tin người giao hàng</h4>
                         <p>
                           <b>Tên: </b> {shipper && shipper.name}
                         </p>
                         <p>
                           <b>Số điện thoại: </b>
                           {shipper && shipper.phone}
-                        </p>
+                        </p> */}
                       </Fragment>
                     ) : (
                       ""
@@ -133,7 +132,7 @@ const ProcessOrder = () => {
                     {shippingDetails}
                   </p>
                   <p>
-                    <b>Tổng tiền: </b>{" "}
+                    <b>Tổng tiền:</b>{" "}
                     {totalPrice &&
                       totalPrice
                         .toFixed(3)
@@ -141,60 +140,20 @@ const ProcessOrder = () => {
                     vnđ
                   </p>
 
-                  <p>
+                  {/* <p>
                     <b>Đơn hàng id: </b> {order._id}
-                  </p>
+                  </p> */}
 
                   <p>
                     <b>Ngày giao hàng: </b>
                     {order.orderStatus &&
-                    String(order.orderStatus).includes("Đã giao hàng")
+                      String(order.orderStatus).includes("Đã giao hàng")
                       ? String(order.deliveredAt).substring(0, 10)
                       : "Chưa giao hàng"}
                   </p>
 
                   <hr />
-
-                  <h4 className="my-4">Thanh toán</h4>
-                  <p className={isPaid ? "greenColor" : "redColor"}>
-                    <b>{isPaid ? "Đã thanh toán" : "Chưa thanh toán"}</b>
-                  </p>
-
-                  {paymentInfo && paymentInfo.paymentMethod === "byCard" ? (
-                    <>
-                      {" "}
-                      <h4 className="my-4">Stripe id</h4>
-                      <p className="greenColor">
-                        <b>{paymentInfo && paymentInfo.id}</b>
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      {" "}
-                      <h4 className="my-4">User id</h4>
-                      <p className="greenColor">
-                        <b>{user && user._id}</b>
-                      </p>
-                    </>
-                  )}
-
-                  {/* <h4 className="my-4">ID thanh toán</h4>
-                  <p>
-                    <b>{paymentInfo && paymentInfo.id}</b>
-                  </p> */}
-
-                  <h4 className="my-4">Trạng thái đơn hàng:</h4>
-                  <p
-                    className={
-                      order.orderStatus &&
-                      String(order.orderStatus).includes("Đã giao hàng")
-                        ? "greenColor"
-                        : "redColor"
-                    }
-                  >
-                    <b>{orderStatus}</b>
-                  </p>
-
+                
                   <h4 className="my-4">Danh sách sản phẩm:</h4>
 
                   <hr />
@@ -254,13 +213,30 @@ const ProcessOrder = () => {
                           </div>
 
                           <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                            <p>{item.quantity} cái(s)</p>
+                            <p>x {item.quantity}</p>
                           </div>
                         </div>
                       ))}
                   </div>
+
+                  <p className="text-right">
+                    <b>Tổng tiền:</b>{" "}
+                    {totalPrice &&
+                      <b className="bold-text">
+                        {totalPrice
+                          .toFixed(3)
+                          .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".")} vnd
+                      </b>
+                    }
+
+                  </p>
+
+
                   {/* <hr /> */}
                 </div>
+
+
+
 
                 <div className="col-12 col-lg-3 mt-5">
                   <h4 className="my-4">Trạng thái</h4>
@@ -285,6 +261,45 @@ const ProcessOrder = () => {
                   >
                     Cập nhật trạng thái
                   </button>
+                  <h4 className="my-4">Thanh toán</h4>
+                  <p className={isPaid ? "greenColor" : "redColor"}>
+                    <b>{isPaid ? "Đã thanh toán" : "Chưa thanh toán"}</b>
+                  </p>
+
+                  {paymentInfo && paymentInfo.paymentMethod === "byCard" ? (
+                    <>
+                      {" "}
+                      <h4 className="my-4">Stripe id</h4>
+                      <p className="greenColor">
+                        <b>{paymentInfo && paymentInfo.id}</b>
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      {/* <h4 className="my-4">User id</h4>
+                      <p className="greenColor">
+                        <b>{user && user._id}</b>
+                      </p> */}
+                    </>
+                  )}
+
+                  {/* <h4 className="my-4">ID thanh toán</h4>
+                  <p>
+                    <b>{paymentInfo && paymentInfo.id}</b>
+                  </p> */}
+
+                  <h4 className="my-4">Trạng thái đơn hàng:</h4>
+                  <p
+                    className={
+                      order.orderStatus &&
+                      String(order.orderStatus).includes("Đã giao hàng")
+                        ? "greenColor"
+                        : "redColor"
+                    }
+                  >
+                    <b>{orderStatus}</b>
+                  </p>
                 </div>
               </div>
             )}

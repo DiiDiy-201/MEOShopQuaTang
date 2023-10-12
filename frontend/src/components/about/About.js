@@ -9,7 +9,7 @@ const About = () => {
 
       <div class="row justify-content-center">
         <div class="col-12 mt-5">
-          <h1 id="products_heading">Giới thiệu</h1>
+          <h1 id="products_heading">Về chúng tôi</h1>
           <hr />
           <h2>Giới thiệu về MEOShop quà tặng online</h2>
           <p>

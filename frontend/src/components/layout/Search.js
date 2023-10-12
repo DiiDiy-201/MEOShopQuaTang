@@ -22,14 +22,16 @@ const Search = () => {
           type="text"
           placeholder="Bạn tìm gì hôm nay ..."
           className="search-field"
+          style={{ width: "465px", height: "49px", borderRadius: "0", float: "right" }}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <button type="submit" className="search-submit" onClick={searchHandler}>
-          Tìm
-        </button>
+          <button type="submit" className="search-submit" style={{ width: "90px", height: "44px", borderRadius: "0" }}>
+            <i className="fas fa-search"></i> 
+          </button>
       </div>
     </form>
   );
+  
 };
 
 export default Search;

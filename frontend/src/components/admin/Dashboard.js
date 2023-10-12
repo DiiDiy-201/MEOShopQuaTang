@@ -111,22 +111,23 @@ const Dashboard = () => {
 
         <div className="col-12 col-md-10">
           <h1 className="my-4">
-            <img className="title-img" src="/images/admin/switch.svg"></img>
-            Bảng điều khiển
+            {/* <img className="title-img" src="/images/admin/switch.svg" alt=""></img> */}
+            <i className="fa fa-tachometer"></i>
+             Quản lý kho
           </h1>
 
           {loading ? (
             <Loader />
           ) : (
             <Fragment>
-              <MetaData title={"Admin trang quản trị"} />
+              <MetaData title={"Trang quản trị MEOShop"} />
 
               <div className="row pr-4">
                 <div className="col-xl-12 col-sm-12 mb-3">
                   <div className="card text-black bg-light o-hidden h-100">
                     <div className="item-db card-body">
                       <div className="text-center card-font-size">
-                        Doanh thu
+                        Doanh thu của MEOShop
                         <br />{" "}
                         <b>
                           {totalAmount &&
@@ -139,7 +140,7 @@ const Dashboard = () => {
                           vnđ
                         </b>
                       </div>
-                      <img src="/images/admin/dollar.svg"></img>
+                      <img src="/images/admin/dollar.svg" alt=""></img>
                     </div>
                   </div>
                 </div>
@@ -153,7 +154,7 @@ const Dashboard = () => {
                         Sản phẩm
                         <br /> <b>{products && products.length}</b>
                       </div>
-                      <img src="/images/admin/ipad.svg"></img>
+                      <img src="/images/admin/ipad.svg" alt=""></img>
                     </div>
                     <Link
                       className="card-footer text-black clearfix small z-1"
@@ -174,7 +175,7 @@ const Dashboard = () => {
                         Đơn hàng
                         <br /> <b>{orders && orders.length}</b>
                       </div>
-                      <img src="/images/admin/price-list.svg"></img>
+                       <img src="/images/admin/price-list.svg" alt=""></img>
                     </div>
                     <Link
                       className="card-footer text-black clearfix small z-1"
@@ -195,7 +196,7 @@ const Dashboard = () => {
                         Thành viên
                         <br /> <b>{users && users.length}</b>
                       </div>
-                      <img src="/images/admin/man.svg"></img>
+                      <img src="/images/admin/man.svg" alt=""></img>
                     </div>
                     <Link
                       className="card-footer text-black clearfix small z-1"
@@ -216,7 +217,7 @@ const Dashboard = () => {
                         Số sản phẩm hết hàng
                         <br /> <b>{outOfStock}</b>
                       </div>
-                      <img src="/images/admin/open.svg"></img>
+                      <img src="/images/admin/open.svg" alt=""></img>
                     </div>
                     <Link
                       className="card-footer text-black clearfix small z-1"
@@ -268,16 +269,16 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div> */}
-
+              <Fragment>
+                <ProductSalesChart data={productSales} />
+              </Fragment>
               <Fragment>
                 <UserSalesChart data={customerSales} />
               </Fragment>
               <Fragment>
                 <MonthlySalesChart data={salesPerMonth} />
               </Fragment>
-              <Fragment>
-                <ProductSalesChart data={productSales} />
-              </Fragment>
+              
             </Fragment>
           )}
         </div>

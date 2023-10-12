@@ -61,6 +61,7 @@ const HeaderHome = () => {
                       <img
                         style={{ height: "60px" }}
                         src="https://res.cloudinary.com/dioebre1q/image/upload/v1694021452/logo/logo_bpz2zv.gif"
+                        alt =""
                       />
                     </Link>
                   </li>
@@ -73,7 +74,7 @@ const HeaderHome = () => {
                     </li>
                     <li className="menu-item">
                       <Link to="/about" className="menu-link">
-                        Giới thiệu
+                        Về chúng tôi
                       </Link>
                     </li>
                     <li>

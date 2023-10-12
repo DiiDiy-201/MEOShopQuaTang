@@ -41,7 +41,7 @@ const ProductTopRated = () => {
 
   return (
     <div className="container mt-5">
-      <h3 className="eg-title1 eg-title2 mb-50">Top sản phẩm đánh giá cao:</h3>
+      <h3 className="eg-title1 eg-title2 mb-50">Sản phẩm đánh giá cao:</h3>
 
       <Carousel responsive={responsive} infinite={true} autoPlay={true}>
         {products &&
@@ -93,7 +93,7 @@ const ProductTopRated = () => {
                     </ul>
                     <div className="product-add-btn">
                       <Link to={`/product/${product._id}`}>
-                        Xem chi tiết <i className="fa fa-plus"></i>
+                        Xem ngay <i className="fa fa-gift"></i>
                       </Link>
                     </div>
                   </div>

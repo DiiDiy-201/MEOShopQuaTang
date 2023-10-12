@@ -152,7 +152,7 @@ const ConfirmOrder = () => {
 
                     <div className="col-4 col-lg-2 mt-4 mt-lg-0">
                       <p className="" id="card_item_price">
-                        {item.quantity} cái
+                        x {item.quantity} 
                       </p>
                     </div>
 

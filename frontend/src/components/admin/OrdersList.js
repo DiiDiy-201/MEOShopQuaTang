@@ -54,6 +54,11 @@ const OrdersList = () => {
     const data = {
       columns: [
         {
+          label: "ID khách hàng",
+          field: "user",
+          sort: "asc",
+        },
+        {
           label: "Mã đơn hàng",
           field: "id",
           sort: "asc",
@@ -64,7 +69,7 @@ const OrdersList = () => {
           sort: "asc",
         },
         {
-          label: "Số sản phẩm",
+          label: "Danh sách sản phẩm",
           field: "numofItems",
           sort: "asc",
         },
@@ -88,6 +93,7 @@ const OrdersList = () => {
 
     orders.forEach((order) => {
       data.rows.push({
+        user: order.user,
         id: order._id,
         createdAt: String(order.createdAt).substring(0, 10),
         numofItems: order.orderItems.length,

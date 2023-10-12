@@ -98,7 +98,7 @@ const Cart = () => {
       ) : (
         <Fragment>
           <h2 className="mt-5">
-            <span className="fa fa-shopping-basket"></span>
+            {/* <span className="fa fa-shopping-basket"></span> */}
             Giỏ hàng: <b>{cartItems.length} sản phẩm</b>
           </h2>
 
@@ -264,7 +264,7 @@ const Cart = () => {
             <div className="row d-flex justify-content-between">
               <div className="col-12 col-lg-8  adress-details">
                 <h4 className="mb-4">
-                  <b>Địa chỉ</b>
+                  <b>Địa chỉ nhận hàng</b>
                 </h4>
                 {shippingData &&
                   shippingData.map((address) => (
@@ -290,7 +290,7 @@ const Cart = () => {
                     </div>
                   ))}
                 <button className="btn review-btn" onClick={submitHandler}>
-                  Địa chỉ mới
+                  Thêm địa chỉ mới
                 </button>
               </div>
             </div>

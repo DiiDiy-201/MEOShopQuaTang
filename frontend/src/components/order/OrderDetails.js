@@ -25,7 +25,7 @@ const OrderDetails = () => {
   const params = useParams();
 
   //shipper
-  const { shipper } = useSelector((state) => state.shipperAuth);
+  // const { shipper } = useSelector((state) => state.shipperAuth);
 
   const {
     loading,
@@ -95,7 +95,8 @@ const OrderDetails = () => {
         <Fragment>
           <div className="row d-flex justify-content-between">
             <h1 className="my-5 text-center">
-              <i className="fa fa-shopping-basket"></i> Chi tiết đơn hàng
+              {/* <i className="fa fa-shopping-basket"></i>  */}
+              Chi tiết đơn hàng
             </h1>
             <div
               className="col-12 col-lg-10 mt-5 order-details"
@@ -106,14 +107,14 @@ const OrderDetails = () => {
                 (String(order.orderStatus).includes("Đang giao") ||
                   String(order.orderStatus).includes("Đã giao hàng")) ? (
                   <Fragment>
-                    <h4 className="mb-4">Thông tin shipper</h4>
+                    {/* <h4 className="mb-4">Thông tin người giao hàng</h4>
                     <p>
                       <b>Tên: </b> {shipper && shipper.name}
                     </p>
                     <p>
                       <b>Số điện thoại: </b>
                       {shipper && shipper.phone}
-                    </p>
+                    </p> */}
                   </Fragment>
                 ) : (
                   ""
@@ -140,10 +141,10 @@ const OrderDetails = () => {
                 vnđ
               </p>
 
-              <p>
+              {/* <p>
                 <b>Mã đơn hàng: </b>
                 {order._id}
-              </p>
+              </p> */}
 
               <p>
                 <b>Ngày nhận hàng: </b>
@@ -218,7 +219,7 @@ const OrderDetails = () => {
                       </div>
 
                       <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                        <p>{item.quantity} cái(s)</p>
+                        <p>x {item.quantity}</p>
                       </div>
 
                       {order.orderStatus &&
@@ -237,6 +238,17 @@ const OrderDetails = () => {
                     </div>
                   ))}
               </div>
+              <p className="text-right">
+                    <b>Tổng tiền:</b>{" "}
+                    {totalPrice &&
+                      <b className="bold-text">
+                        {totalPrice
+                          .toFixed(3)
+                          .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".")} vnđ
+                      </b>
+                    }
+
+                  </p>
               {/* <hr /> */}
             </div>
             <div className="col-12 col-lg-2 mt-5 order-details">
